@@ -13,5 +13,4 @@ RUN mvn -f /home/app/pom.xml clean package
 FROM openjdk:17-alpine
 EXPOSE 80
 COPY --from=build /home/app/target/singularidad-0.0.1-SNAPSHOT.jar app/app.jar
-ADD config-data app/config-data
 ENTRYPOINT ["java", "-jar","/app/app.jar"]
